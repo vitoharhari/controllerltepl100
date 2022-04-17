@@ -15,6 +15,7 @@ wget --no-check-certificate "https://raw.githubusercontent.com/vitoharhari/contr
 wget --no-check-certificate "https://raw.githubusercontent.com/vitoharhari/controllerltepl100/main/dapatkaniplte.sh" -O /usr/bin/dapatkaniplte.sh && chmod 777 /usr/bin/dapatkaniplte.sh
 sed -i 's/exit 0/ /g' /etc/rc.local
 cat <<EOF>> /etc/rc.local
+sleep 10
 bash /usr/bin/dapatkaniplte.sh &
 sleep 40
 httping google.com &
