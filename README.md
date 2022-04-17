@@ -2,11 +2,14 @@
 
 Script controller modul LTE Bolt PL 100 by Vito H.S.
 Big Thanks to :
+
+- langit 7
 - kopi Jahe
 - Abdul Aziz Amar
 - Raditya Budi Handoko
 - Teguh Surya Mungaran
 - Wega Regianto
+- Reyre
 
 Dan masih banyak lagi master yang belum bisa saya sebutkan 🙏
 
