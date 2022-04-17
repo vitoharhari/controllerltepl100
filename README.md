@@ -7,6 +7,7 @@ Big Thanks to :
 - Raditya Budi Handoko
 - Teguh Surya Mungaran
 - Wega Regianto
+Dan masih banyak lagi master yang belum bisa saya sebutkan 🙏
 
 Terimakasih atas script,firmware dan ilmu nya,disini saya hanya menyempurnakan saja supaya bisa lebih user friendly 😁🙏.sebagian file dan script diambil dari firmware para master diatas🙏🙏 
 
