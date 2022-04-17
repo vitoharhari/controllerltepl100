@@ -1,6 +1,6 @@
 # controllerltepl100
 
-Script controller modul LTE Bolt PL by Vito H.S.
+Script controller modul LTE Bolt PL 100 by Vito H.S.
 Big Thanks to :
 - kopi Jahe
 - Abdul Aziz Amar
