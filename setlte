@@ -1,0 +1,111 @@
+#!/bin/bash
+
+gantiapn(){
+read -p "masukkan apn yang anda inginkan: " an
+echo apnku="$an" > /root/hasilapn.sh
+sleep 2
+echo "apn berhasil dimasukkan"
+sleep 3
+echo "apn anda saat ini adalah:"
+sleep 2
+echo "$an"
+sleep 2
+echo "mengganti apn di modul lte ..."
+sleep 1
+echo " * "
+sleep 1
+echo " * "
+sleep 1
+echo " * "
+sleep 1
+echo "menerapkan apn di modul lte..."
+sleep 1
+bash /usr/bin/lte.sh
+sleep 1
+echo "mereboot modul lte..."
+bash /usr/bin/rebootlte.sh
+sleep 3
+exit
+}
+
+rebootlte(){
+bash /usr/bin/rebootlte.sh
+}
+
+autorebootlte(){
+echo "masukkan waktu yang diinginkan untuk auto reboot modul lte tiap 24 jam sekali"
+echo "contoh format yang bisa terbaca :"
+echo "00 03"
+echo "masukkan waktu (menit jam)"
+read -p ": " time
+echo mytime="$time" > /root/hasilwaktu.sh
+sleep 2
+echo "berhasil menyimpan waktu auto reboot"
+sleep 1
+echo "waktu yang telah disimpan adalah:"
+sleep 2
+echo "$time"
+echo "menerapkan auto reboot di crontab..."
+sleep 2
+bash /usr/bin/arlte.sh
+echo "berhasil menerapkan auto reboot modul lte"
+}
+
+offrebootlte(){
+echo "mematikan auto reboot modul lte"
+sed -i "/^# AWAL AUTOREBOOT LTE/,/^# AKHIRNAUTOREBOOT LTE/d" /etc/crontabs/root > /dev/null
+/etc/init.d/cron restart
+sleep 1
+echo "*"
+sleep 1
+echo "*"
+sleep 1
+echo "*"
+sleep 2
+echo "berhasil mematikan auto reboot modul lte"
+}
+
+case $1 in
+"-apn")
+gantiapn;exit
+;;
+esac
+
+case $1 in
+"-reboot")
+rebootlte;exit
+;;
+esac
+
+case $1 in
+"-arl")
+autorebootlte;exit
+;;
+esac
+
+case $1 in
+"-off")
+offrebootlte;exit
+;;
+esac
+
+clear
+echo ""
+echo "================================================================================="
+echo ""
+echo " SELAMAT DATANG DI SCRIPT CONTROLLER MODUL LTE BOLT PL100 BY VITO H.S"
+sleep 1
+echo ""
+echo " SCRIPT INI DIGUNAKAN UNTUK MEMPERMUDAH DALAM MENGGANTI APN DAN REBOOT MODUL LTE"
+sleep 1
+echo ""
+echo " Silahkan ketik perintah dibawah untuk menggunakan script ini"
+echo ""
+echo ""
+echo " Isi dan ganti apn ketik ==============================> setlte -apn"
+echo " Reboot modul lte ketik  ==============================> setlte -reboot"
+echo " setting auto reboot modul lte tiap hari (24 jam )=====> setlte -arl"
+echo " mematikan auto reboot modul lte=======================> setlte -off"
+echo ""
+echo "================================================================================="
+echo ""
