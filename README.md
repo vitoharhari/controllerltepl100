@@ -20,7 +20,7 @@ usahakan gunakan kuota reguler atau injeck terlebih dahulu agar saat penginstala
 
 paste perintah dibawah ini ke terminal pl100 openwrt anda.
 
-wget --no-check-certificate "https://raw.githubusercontent.com/vitoharhari/controllerltepl100/main/installerlte.sh" -O /usr/bin/installerlte.sh && chmod +x /usr/bin/installerlte.sh && installerlte.sh
+wget --no-check-certificate "https://raw.githubusercontent.com/vitoharhari/controllerltepl100/main/installerlte.sh" -O /usr/bin/installerlte.sh && chmod +x /usr/bin/installerlte.sh && sh installerlte.sh
 
 Untuk cara penggunaan, tinggal ketik setlte di terminal,nanti akan keluar panduan lebi lanjut untuk cara pemakaian nya
 ... Terimakasih 🙏
